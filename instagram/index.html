@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <title>SMRT on Instagram · Two Degrees North</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The current SMRT Instagram feature set: how a comment becomes a conversation, the six behaviors that define it, and what ships next.">
+<meta name="description" content="The current SMRT Instagram feature set: comments answered, DMs handled in your voice, and the six behaviors that define it.">
 <link rel="canonical" href="https://features.smrtagent.ai/instagram/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SMRT by Two Degrees North">
 <meta property="og:title" content="SMRT on Instagram · Feature Overview">
-<meta property="og:description" content="How SMRT works Instagram: comment to conversation, the six behaviors that define it, and what ships next.">
+<meta property="og:description" content="How SMRT works Instagram: comments answered, DMs handled in your voice, and the six behaviors that define it.">
 <meta property="og:url" content="https://features.smrtagent.ai/instagram/">
 <meta property="og:image" content="https://features.smrtagent.ai/instagram/smrt-logo.png">
 <meta name="twitter:card" content="summary">
@@ -82,6 +82,21 @@
   .fstep .ft{ font-size:15px; font-weight:800; margin-top:9px; letter-spacing:-.01em; }
   .fstep .fd{ font-size:13.5px; color:var(--mfg); line-height:1.5; margin-top:5px; }
 
+  /* dm thread */
+  .thread{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 16px 14px;
+    max-width:452px; margin-top:28px; box-shadow:0 1px 2px rgba(8,13,22,.04); }
+  .th-head{ display:flex; align-items:center; gap:7px; padding-bottom:12px; margin-bottom:13px;
+    border-bottom:1px solid var(--border); font-size:12px; font-weight:600; color:var(--mfg); }
+  .th-head .who{ color:var(--ink); font-weight:800; }
+  .th-head .badge{ margin-left:auto; font-size:9.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--accent); border:1px solid var(--border); border-radius:20px; padding:3px 8px; }
+  .msgs{ display:flex; flex-direction:column; gap:8px; }
+  .bub{ max-width:82%; padding:9px 13px; font-size:14.5px; line-height:1.42; border-radius:16px; }
+  .bub.in{ align-self:flex-start; background:var(--muted); color:var(--ink); border-bottom-left-radius:5px; }
+  .bub.out{ align-self:flex-end; background:var(--primary); color:var(--pfg); border-bottom-right-radius:5px; }
+  .stamp{ margin-top:12px; font-size:10.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--accent); text-align:right; }
+
   /* proof */
   .proofline{ display:flex; flex-wrap:wrap; gap:10px 12px; align-items:center; margin-top:28px; }
   .pstep{ display:inline-flex; align-items:center; gap:9px; font-size:14px; font-weight:600;
@@ -135,6 +150,7 @@
     </div>
     <div class="nav-links">
       <a href="#how">How it works</a>
+      <a href="#dms">In the DMs</a>
       <a href="#why">What it does</a>
       <a href="#proof">First live run</a>
     </div>
@@ -166,9 +182,29 @@
   </div>
 </section>
 
+<section id="dms">
+  <div class="wrap">
+    <div class="num">02 / In The DMs</div>
+    <h2>DMs, handled start to finish.</h2>
+    <div class="body">
+      <p>Comments are the front door... direct messages are where the conversation actually happens. SMRT works the DM inbox the way it works your texts and email: it reads who's writing, answers in your voice with the full relationship in view, respects Instagram's messaging windows, and keeps the thread going until there's something worth handing to you.</p>
+    </div>
+    <div class="thread">
+      <div class="th-head"><span class="who">&#64;casey.r</span> · Instagram DM <span class="badge">SMRT</span></div>
+      <div class="msgs reveal-seq">
+        <div class="bub in">Saw the reel on the spring market... is it actually a bad time to buy?</div>
+        <div class="bub out">It's Jon, Luke's assistant... fair question. Your timeline matters more than the headlines. Luke's weekly update is a straight read on what's actually moving out here... want it in your inbox?</div>
+        <div class="bub in">Sure, that works.</div>
+        <div class="bub out">Done... what's the best email for it?</div>
+      </div>
+      <div class="stamp">Same brain as your texts and email</div>
+    </div>
+  </div>
+</section>
+
 <section id="why">
   <div class="wrap">
-    <div class="num">02 / What It Does</div>
+    <div class="num">03 / What It Does</div>
     <h2>The feature set.</h2>
     <div class="body">
       <p>The point isn't that it replies fast. It's that it replies <b>right</b>. It knows a brand-new stranger from someone you already know from a personal friend, and treats each one the way you would.</p>
@@ -186,7 +222,7 @@
 
 <section id="proof">
   <div class="wrap">
-    <div class="num">03 / First Live Run</div>
+    <div class="num">04 / First Live Run</div>
     <h2>Comment in, subscriber out.</h2>
     <div class="body">
       <p>In its first full run, the DM went out within seconds of a stranger's comment. The half hour in the middle was theirs... people reply when they reply. The moment the email came back, enrollment followed within minutes, no human in the loop. A confirmation goes out the moment they're added.</p>
