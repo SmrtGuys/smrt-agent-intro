@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capability Registry · Your SMRT Assistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The live capability registry for your SMRT assistant: what it can do right now, what is rolling out, and its hard limits. Generated from the same source the assistant runs on.">
+<link rel="canonical" href="https://features.smrtagent.ai/assistant/registry/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SMRT by Two Degrees North">
+<meta property="og:title" content="Capability Registry · Your SMRT Assistant">
+<meta property="og:description" content="What your assistant can do right now, straight from the source it runs on.">
+<meta property="og:url" content="https://features.smrtagent.ai/assistant/registry/">
+<meta property="og:image" content="https://features.smrtagent.ai/assistant/smrt-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="../smrt-logo.png">
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  /* SMRT customer brand · matches assistant/ (tdn-site). Committed light editorial. */
+  :root{
+    --bg:#fefdfc; --card:#fbfaf8; --ink:#080d16; --primary:#071123;
+    --pfg:#fcfcfa; --muted:#f3f2ef; --mfg:#575e69; --accent:#970004;
+    --border:#dcdee1; --radius:4px;
+    --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--sans); background:var(--bg); color:var(--ink);
+    line-height:1.6; -webkit-font-smoothing:antialiased; font-size:16px; }
+  .wrap{ max-width:880px; margin:0 auto; padding:0 28px; }
+  a{ color:inherit; }
+  nav{ position:sticky; top:0; z-index:20; background:rgba(254,253,252,.86);
+    backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid var(--border); }
+  .nav-in{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.02em; }
+  .brand img{ width:30px; height:30px; display:block; }
+  .brand .by{ font-size:10px; font-weight:600; color:var(--mfg); letter-spacing:.04em; }
+  .nav-links{ display:flex; align-items:center; gap:26px; font-size:13.5px; font-weight:600; color:var(--mfg); }
+  .nav-links a{ text-decoration:none; }
+  .nav-links a:hover{ color:var(--ink); }
+  .hero{ padding:72px 0 46px; }
+  .kicker{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--accent); margin-bottom:18px; }
+  h1{ font-size:44px; line-height:1.06; letter-spacing:-.025em; font-weight:800; max-width:18ch; }
+  .lede{ margin-top:18px; font-size:18px; line-height:1.55; color:#2c3340; max-width:58ch; }
+  .lede b{ color:var(--ink); }
+  section{ padding:42px 0; border-top:1px solid var(--border); }
+  h2{ font-size:28px; line-height:1.12; letter-spacing:-.02em; font-weight:800; }
+  .rgroup{ margin-top:26px; }
+  .rgroup h3{ font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--mfg); margin-bottom:4px; }
+  .crow{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:4px 36px;
+    padding:14px 0; border-bottom:1px solid var(--border); }
+  .rgroup .crow:last-child, .limits .crow:last-child{ border-bottom:none; }
+  .crow .say{ font-size:15.5px; font-weight:700; letter-spacing:-.01em; line-height:1.45; color:var(--ink); }
+  .crow .out{ font-size:14px; line-height:1.5; color:#333a47; }
+  .chip{ display:inline-block; margin-left:10px; padding:1.5px 8px; border-radius:999px;
+    font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+    vertical-align:2px; border:1px solid var(--border); }
+  .chip-live{ background:var(--primary); border-color:var(--primary); color:var(--pfg); }
+  .chip-rollout{ background:transparent; border-color:var(--accent); color:var(--accent); }
+  .chip-notyet{ background:var(--muted); color:var(--mfg); }
+  .stamp{ padding:26px 0 60px; font-size:12.5px; color:var(--mfg); border-top:1px solid var(--border); }
+  .stamp code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px; }
+  @media (max-width:640px){
+    h1{ font-size:34px; }
+    .crow{ grid-template-columns:1fr; gap:2px; }
+  }
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <div class="brand"><img src="../smrt-logo.png" alt=""><div>SMRT<div class="by">BY TWO DEGREES NORTH</div></div></div>
+  <div class="nav-links"><a href="../">The working manual</a></div>
+</div></nav>
+
+<div class="wrap">
+  <div class="hero">
+    <span class="kicker">Capability Registry</span>
+    <h1>What your assistant can do, from the source.</h1>
+    <p class="lede">This page is <b>generated from the same registry your assistant runs on</b>, the exact list its planner is told. When a capability ships or a limit lifts, this page, the planner, and <a href="../">the working manual</a> move together. It cannot drift from the truth.</p>
+  </div>
+
+  <section>
+    <h2>Newest capabilities</h2>
+
+      <div class="rgroup">
+        <h3>Reminders</h3>
+        <div class="crow">
+          <div class="say">"Done" / "Handled" after a reminder fires<span class="chip chip-live">Live</span></div>
+          <div class="out">Marks the fired reminder handled so it stops waiting on you.</div>
+        </div>
+        <div class="crow">
+          <div class="say">"Text Kate every Wednesday at 11 that I love her"<span class="chip chip-rollout">Rolling out</span></div>
+          <div class="out">Sets a recurring personal text that goes to the contact directly, in your words, on your schedule.</div>
+        </div>
+      </div>
+
+      <div class="rgroup">
+        <h3>Newsletter</h3>
+        <div class="crow">
+          <div class="say">"Take Kate off the newsletter"<span class="chip chip-live">Live</span></div>
+          <div class="out">Removes that contact from the market update list.</div>
+        </div>
+      </div>
+
+      <div class="rgroup">
+        <h3>Messages</h3>
+        <div class="crow">
+          <div class="say">"Draft a text to Kate about Tuesday" then "Send it"<span class="chip chip-rollout">Rolling out</span></div>
+          <div class="out">Shows you the exact text first. Only the wording you approved goes out, and only after you say send it.</div>
+        </div>
+      </div>
+
+      <div class="rgroup">
+        <h3>Briefings</h3>
+        <div class="crow">
+          <div class="say">(automatic)<span class="chip chip-live">Live</span></div>
+          <div class="out">A morning brief and an evening wrap, each once a day.</div>
+        </div>
+      </div>
+  </section>
+
+  <section class="limits">
+    <h2>Hard limits, said plainly</h2>
+    <div style="margin-top:10px">
+        <div class="crow"><div class="say">Hard limit</div><div class="out">Recurring messages straight to a customer are rolling out account by account. Until your account is on, recurring schedules run for you, and drafted texts wait for your approval.</div></div>
+        <div class="crow"><div class="say">Hard limit</div><div class="out">It cannot see any calendar. Booking stays with you.</div></div>
+    </div>
+  </section>
+
+  <div class="stamp wrap-inner">
+    Generated from <code>capability-registry.ts</code> @ <code>23f1dfd</code> · 2026-08-16 ·
+    The full command sheet lives in <a href="../">the working manual</a>.
+  </div>
+</div>
+</body>
+</html>
